@@ -1,17 +1,19 @@
 const sumAll = function(startNum, endNum) {
 
-    arrayOfNum = [];
-    for(let i = startNum; i < endNum; i++){
-        arrayOfNum += i; 
+    let arrayOfNum = [];
+    let arrayOfString = [];
+    let result = 0;
+  // arrayOfNum elements to be converted from strings to int.
+  // the loop populates both strings and convers in one step.
+    for(let i = startNum; i <= endNum; i++){
+      arrayOfString += arrayOfNum.push(parseInt(i));
     }
-    console.log(arrayOfNum)
-    /*
-cant just do for(i = startNum; i < endNum; i++) as one test goes backwards.
+  
+    for (let i = 0; i < arrayOfNum.length; i++){
+      result += arrayOfNum[i];
+    }
     
-    create array [start-end] 
-    then loop through the array
-
-  */  
+    return result;
 };
 
 // Do not edit below this line
