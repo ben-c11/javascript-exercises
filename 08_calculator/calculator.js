@@ -42,16 +42,20 @@ const power = function(num, pow) {
 
 const factorial = function(num) {
     
+  /* 5! = 5 * 4 * 3 * 2 * 1
+              20 * 3 * 2 * 1
+                60 * 2 * 1
+                  120 * 1
+                    120 */
+      // n! = n * (n-1)!
+      // n! = n * n-1 * n-2 * n-3
 
-  if(num === 1 || num === 0) {
+  if (num === 1 || num === 0) {
     return 1;
   }
-
-  for(let i = num -1; i >= 1; i--){
-    num = num * i;
-  }
+      
+  return num * (factorial(num - 1)); 
   
-  return num;
 };
 
 // Do not edit below this line
