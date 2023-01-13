@@ -41,19 +41,17 @@ const power = function(num, pow) {
 };
 
 const factorial = function(num) {
-      
-  let result = num;
+    
 
   if(num === 1 || num === 0) {
     return 1;
   }
-  while (num > 1){
-    result *= (num - 1);
-    
-    num--;
+
+  for(let i = num -1; i >= 1; i--){
+    num = num * i;
   }
   
-  return result;
+  return num;
 };
 
 // Do not edit below this line
