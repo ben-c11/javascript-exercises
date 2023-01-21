@@ -8,23 +8,23 @@
     */
 
     const findTheOldest = function(people) {
-        let oldestAge = 0;
-        let oldestPerson = people[0];
-  
-        for(let i = 0; i < people.length; i++){
-          let birthYear =  Object.getOwnPropertyDescriptor(people[i], 'yearOfBirth').value; 
-          let deathYear = Object.getOwnPropertyDescriptor(     people [i], 'yearOfDeath').value;
-          let personAge = deathYear - birthYear;
-  
-  
-          if(personAge > oldestAge){
-            oldestAge = personAge;
-            oldestPerson = Object.getOwnPropertyDescriptor(people[i], 'name').value;
-          }
-        }
-        return oldestPerson; 
+      let oldestAge = 0;
+      let personAge = 0;
+      let oldestPerson = people[0];
+
+      for(person of people){
+        let personBirth = Object.getOwnPropertyDescriptor(person, 'yearOfBirth').value;
+        let personDeath = Object.getOwnPropertyDescriptor(person, 'yearOfDeath').value; 
+        
+        personAge = personDeath - personBirth;
+
+        if (personAge > oldestAge){
+          oldestAge = personAge;
+          console.log(oldestAge)
+          oldestPerson = person;
+        } 
       }
-      console.log(findTheOldest(people))
+      return oldestPerson;
 
 // Do not edit below this line
 module.exports = findTheOldest;
