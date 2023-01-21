@@ -10,9 +10,18 @@
     const findTheOldest = function(people) {
       let oldestAge = 0;
       let personAge = 0;
-      let oldestPerson = people[0];
+      let oldestPerson;
 
       for(person of people){
+        // Checks if person obj has a yearOfDeath, if not then creates a new property with todays date.
+        
+        if(Object.getOwnPropertyDescriptor(person, 'yearOfDeath') == undefined){
+          const today = new Date();
+          const year = today.getUTCFullYear();
+          
+          person.yearOfDeath = year;
+        }
+
         let personBirth = Object.getOwnPropertyDescriptor(person, 'yearOfBirth').value;
         let personDeath = Object.getOwnPropertyDescriptor(person, 'yearOfDeath').value; 
         
@@ -20,7 +29,6 @@
 
         if (personAge > oldestAge){
           oldestAge = personAge;
-          console.log(oldestAge)
           oldestPerson = person;
         } 
       }
