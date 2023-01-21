@@ -1,11 +1,3 @@
- /*
-    Go into 'people', and iterate across whole array
-    Look into object and age = deathYear - birthYear
-        if no deathYear then deathYear == <today's date>
-    Compare age to previous object age, if greater, Oldest_ == current age
-    Continue for all objects in array
-    Print the object name.
-    */
 
     const findTheOldest = function(people) {
       let oldestAge = 0;
